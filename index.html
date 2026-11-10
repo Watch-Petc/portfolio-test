@@ -698,7 +698,7 @@ function ctl(){var lg0=document.getElementById("lang");if(lg0)lg0.title=lang==="
  function put(p,v){LNG.dataset.s=p.s;var h=LNG.offsetHeight,y=Math.min(Math.max(p.y,v.st+M),Math.max(v.st+M,v.h-h-v.sb-M));p.y=y;LNG.style.top=y+"px";LNG.style.bottom="auto";if(p.s==="l"){LNG.style.left=(M+v.sl)+"px";LNG.style.right="auto"}else{LNG.style.right=(M+v.sr)+"px";LNG.style.left="auto"}}
  window.layoutCtl=function(){var v=vp(),p=ok(pos.lang)?pos.lang:{s:"l",y:document.querySelector("nav").offsetHeight+M};put(p,v);if(ok(pos.lang))pos.lang=p};
  function save(){try{localStorage.setItem("uiPos2",JSON.stringify({lang:pos.lang}))}catch(e){}}
- var sx,sy,ox,oy,on=false,down=false,moved=false,pid=null,hold=0,lastPtr=0,HOLD=300;
+ var sx,sy,ox,oy,on=false,down=false,moved=false,pid=null,hold=0,lastPtr=0,HOLD=200;
  /* แตะสั้น = สลับภาษา, กดค้าง 0.3 วิ = ยกปุ่มขึ้นแล้วลากได้ (จับ pointer ไว้ตั้งแต่กด จึงลากเร็วแค่ไหนก็ไม่หลุด) */
  LNG.addEventListener("click",function(e){if(Date.now()-lastPtr<900){e.stopImmediatePropagation();e.preventDefault()}},true);
  LNG.addEventListener("contextmenu",function(e){e.preventDefault()});
